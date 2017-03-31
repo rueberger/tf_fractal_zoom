@@ -99,7 +99,7 @@ def build_dense_render_step(center=(-1.75, 0), characteristic_length=3, resoluti
     y_bbox = (center[1] - y_fov / 2, center[1] + y_fov / 2)
 
     x_mesh, y_mesh = np.meshgrid(np.linspace(*x_bbox, num=resolution[0]), np.linspace(*y_bbox, num=resolution[1]), indexing='ij')
-    _c_mesh = y_mesh + 1j * x_mesh
+    _c_mesh = x_mesh + 1j * y_mesh
 
     # all with shape [1080, 1920]
     c_mesh = tf.constant(_c_mesh.astype(np.complex64), name='c_mesh')
