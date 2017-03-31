@@ -30,4 +30,4 @@ def display_fractal(arr, fmt='jpeg'):
     arr = np.uint8(np.clip(arr, 0, 255))
     fh = BytesIO()
     PIL.Image.fromarray(arr).save(fh, fmt)
-    display(Image(data=file.getvalue()))
+    display(Image(data=fh.getvalue()))
